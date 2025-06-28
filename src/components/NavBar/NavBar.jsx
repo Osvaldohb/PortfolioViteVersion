@@ -30,22 +30,22 @@ const NavBar = () => {
 
             <ul className='hidden gap-4 text-2xl sm:text-sm md:text-base  font-semibold text-gray-700 xl:flex '>
                 <li className='hover:scale-110 transition-transform duration-500 ease-in-out'>
-                    <a href="/home" className=' rounded-full py-3 px-8 transition-colors duration-500 ease-in-out   hover:bg-gray-200'>Home</a>
+                    <a href="#home" className=' rounded-full py-3 px-8 transition-colors duration-500 ease-in-out   hover:bg-gray-200'>Home</a>
                 </li>
                 <li className='hover:scale-110 transition-transform duration-500 ease-in-out'>
-                    <a href="/about" className='rounded-full py-3 px-8 transition-colors duration-500 ease-in-out   hover:bg-gray-200'>About</a>
+                    <a href="#about" className='rounded-full py-3 px-8 transition-colors duration-500 ease-in-out   hover:bg-gray-200'>About</a>
                 </li>
                 <li className='hover:scale-110 transition-transform duration-500 ease-in-out'>
-                    <a href="/services" className='rounded-full py-3 px-8 transition-colors duration-500 ease-in-out   hover:bg-gray-200'>Services</a>
+                    <a href="#career" className='rounded-full py-3 px-8 transition-colors duration-500 ease-in-out   hover:bg-gray-200'>Career</a>
                 </li>
                 <li className='hover:scale-110 transition-transform duration-500 ease-in-out'>
-                    <a href="/portfolio" className='rounded-full py-3 px-8 transition-colors duration-500 ease-in-out   hover:bg-gray-200'>Portfolio</a>
+                    <a href="#portfolio" className='rounded-full py-3 px-8 transition-colors duration-500 ease-in-out   hover:bg-gray-200'>Portfolio</a>
                 </li>
                 <li className='hover:scale-110 transition-transform duration-500 ease-in-out'>
-                    <a href="/blog" className='rounded-full py-3 px-8 transition-colors duration-500 ease-in-out   hover:bg-gray-200 scale'>Blog</a>
+                    <a href="#blog" className='rounded-full py-3 px-8 transition-colors duration-500 ease-in-out   hover:bg-gray-200 scale'>Blog</a>
                 </li>
                 <li className='hover:scale-110 transition-transform duration-500 ease-in-out'>
-                    <a href="/contact" className='transform bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-white rounded-full py-3 px-8 transition-all duration-500 ease-in-out   hover:scale-110'>Contact</a>
+                    <a href="#contact" className='transform bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-white rounded-full py-3 px-8 transition-all duration-500 ease-in-out   hover:scale-110'>Contact</a>
                 </li>
             </ul>
             <div className='xl:hidden relative' onClick={handleMenuToggle}>
@@ -58,13 +58,13 @@ const NavBar = () => {
                 <div id='menu' className='absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg z-10 changeOff' >
                     <ul className='flex flex-col gap-2 p-4'>
                         <li>
-                            <a href="#about" className='block px-4 py-2 text-gray-700 hover:bg-gray-200'>Home</a>
+                            <a href="#home" className='block px-4 py-2 text-gray-700 hover:bg-gray-200'>Home</a>
                         </li>
                         <li>
-                            <a href="#projects" className='block px-4 py-2 text-gray-700 hover:bg-gray-200'>About</a>
+                            <a href="#about" className='block px-4 py-2 text-gray-700 hover:bg-gray-200'>About</a>
                         </li>
                         <li>
-                            <a href="#skills" className='block px-4 py-2 text-gray-700 hover:bg-gray-200'>Services</a>
+                            <a href="#career" className='block px-4 py-2 text-gray-700 hover:bg-gray-200'>Career</a>
                         </li>
                         <li>
                             <a href="#contact" className='block px-4 py-2 text-gray-700 hover:bg-gray-200'>Portfolio</a>

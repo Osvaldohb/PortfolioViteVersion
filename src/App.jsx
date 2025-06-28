@@ -14,11 +14,11 @@ function App() {
 
   return (
    <>
-      <main className=" flex justify-center items-center px-16  h-screen bg-white hero">
+      <main className=" flex justify-center items-center px-16  h-screen bg-white hero" id='home'>
         <Hero/>
       </main>
 
-      <section className="py-20 px-6 text-center flex flex-col  xl:flex-row justify-center items-start gap-6">
+      <section className="py-20 px-6 text-center flex flex-col  xl:flex-row justify-center items-start gap-6"  id='about'>
         <CardContainer/>
       </section>
 

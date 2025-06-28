@@ -13,7 +13,7 @@ const CardTech = ({imgId,Name,Description}) => {
             <div>
                 <div className="flex-col items-start gap-4">
                     <span className="text-xl sm:text-2xl md:text-3xl font-semibold bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 bg-clip-text text-transparent">{Name}</span>
-                    <p className="text-xsm sm:text-sm md:text-base text-gray-600 max-w-md">
+                    <p className="text-xsm sm:text-sm md:text-base text-gray-600 max-w-md px-1">
                        {Description}
                     </p>
                 </div>
