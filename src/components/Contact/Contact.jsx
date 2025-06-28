@@ -3,8 +3,8 @@ import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const [form, setForm] = useState({
-    name: '',
-    email: '',
+    user_name: '',
+    user_email: '',
     message: '',
   });
 
@@ -18,15 +18,16 @@ const Contact = () => {
   }, [form]);
 
   const handleSubmit = (e) => {
+    
     e.preventDefault();
-    if (!form.name || !form.email || !form.message) return;
+    if (!form.user_name || !form.user_email || !form.message) return;
 
     emailjs.send('service_dpp6k8q', 'template_anuninu', form,{
          publicKey:'0zhJ5vUlkIoh_dvLD',
     })
       .then((response) => {
         console.log('Email sent successfully:', response);
-        setForm({ name: '', email: '', message: '' });
+        setForm({ user_name: '', user_email: '', message: '' });
         })
         .catch((error) => {
         console.error('Error sending email:', error);
@@ -42,18 +43,20 @@ const Contact = () => {
         <form onSubmit={handleSubmit} className="flex flex-col gap-5">
           <input
             type="text"
-            name="name"
+            id='user_name'
+            name="user_name"
             placeholder="Your name"
-            value={form.name}
+            value={form.user_name}
             onChange={handleChange}
             required
             className="px-5 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-pink-500 bg-white/70 placeholder-gray-500"
           />
           <input
             type="email"
-            name="email"
+            id='user_email'
+            name="user_email"
             placeholder="Your email"
-            value={form.email}
+            value={form.user_email}
             onChange={handleChange}
             required
             className="px-5 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-pink-500 bg-white/70 placeholder-gray-500"
