@@ -69,6 +69,7 @@ const Contact = () => {
             onChange={handleChange}
             required
             className="px-5 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-pink-500 bg-white/70 placeholder-gray-500 resize-none"
+            maxLength={500} 
           />
           <button
             type="submit"
