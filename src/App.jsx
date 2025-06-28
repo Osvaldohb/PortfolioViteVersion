@@ -26,10 +26,6 @@ function App() {
 
       <Career/>
 
-      <section className="h-screen bg-amber-950">
-
-      </section>
-
 
 
 

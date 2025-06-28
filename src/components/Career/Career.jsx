@@ -52,7 +52,7 @@ const Career = () => {
   return (
     <main
       ref={sectionRef}
-      className="h-screen flex flex-col justify-center items-center px-6 md:px-16 bg-white text-black"
+      className="min-h-[145vh]  md:min-h-[140vh] lg:min-h-screen  h-screen flex flex-col justify-center items-center px-6 md:px-16 bg-white text-black"
     >
       <h2 className="about-title text-4xl md:text-5xl font-semibold mb-4 tracking-tight">
         Career Timeline
