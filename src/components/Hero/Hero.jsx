@@ -19,8 +19,7 @@ const Hero = () => {
 
         <section className="mt-8 hover:scale-110 transition-transform duration-300">
           <a
-            href="/osvaldo-santillan-cv.pdf"
-            target="_blank"
+            href="/OsvaldoSantillanJimenez_CV.pdf"
             className="inline-block px-6 py-3 rounded-full border border-gray-300 text-gray-900 hover:bg-gray-100 hover:shadow-sm transition-all duration-300 text-sm sm:text-base font-medium"
           >
             📄 Download CV

@@ -6,6 +6,7 @@ import Hero from "./components/Hero/Hero";
 import CardContainer from "./components/CardContainer/CardContainer";
 import AboutMe from "./components/About/About";
 import Career from "./components/Career/Career";
+import Contact from './components/Contact/Contact';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -25,6 +26,8 @@ function App() {
       <AboutMe/>
 
       <Career/>
+
+      <Contact/>
 
 
 
