@@ -1,0 +1,102 @@
+@import "tailwindcss";
+html,
+body {
+    height: auto;
+    min-height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.test {
+    height: 300vh;
+}
+
+body {
+    background-color: white;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.hero {
+    background-image: url('./assets/bg1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.ApperAnimation {
+    animation: ApperAnimation 1s ease-in-out;
+}
+
+.animation-side-right {
+    animation: SideAnimationR 1.5s ease-in-out;
+}
+
+.SideAnimation {
+    animation: SideAnimation 1.5s ease-in-out;
+}
+
+.animate-fade-in {
+    animation: animate-fade-in 1.5s ease-in-out;
+}
+
+.animate-border-glow {
+    background-size: 200% 200%;
+    animation: borderGlowLoop .9s linear infinite;
+}
+
+@keyframes borderGlowLoop {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 200% 50%;
+    }
+}
+
+@keyframes SideAnimation {
+    from {
+        opacity: 0;
+        transform: translateX(-180px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes SideAnimationR {
+    from {
+        transform: translateX(-180px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes ApperAnimation {
+    from {
+        opacity: 0;
+        transform: translateY(80px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes animate-fade-in {
+    from {
+        z-index: 0;
+        opacity: 0;
+        transform: translateX(-200px) scale(0.8);
+    }
+    to {
+        z-index: 1;
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+}
