@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, {  useState } from 'react';
 import emailjs from '@emailjs/browser';
+import Swal from 'sweetalert2';
 
 const Contact = () => {
   const [form, setForm] = useState({
@@ -8,31 +9,67 @@ const Contact = () => {
     message: '',
   });
 
+ const serviceId = import.meta.env.VITE_EM_SERVICE;
+ const templateId = import.meta.env.VITE_EM_TEMPLATE;
+ const publicKey = import.meta.env.VITE_EM_PUBLIC_KEY; 
+
+
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
 
   };
 
-  useEffect(() => {
-    console.log(form);
-  }, [form]);
 
   const handleSubmit = (e) => {
     
     e.preventDefault();
     if (!form.user_name || !form.user_email || !form.message) return;
 
-    emailjs.send('service_dpp6k8q', 'template_anuninu', form,{
-         publicKey:'0zhJ5vUlkIoh_dvLD',
+    emailjs.send(serviceId, templateId, form, {
+         publicKey: publicKey,
     })
       .then((response) => {
-        console.log('Email sent successfully:', response);
+                Swal.fire({
+                title: 'Email sent!',
+                text: 'Thanks for reaching out. I’ll get back to you soon.',
+                icon: 'success',
+                background: 'rgba(255, 255, 255, 0.75)',
+                color: '#111827', 
+                iconColor: '#10B981', // Tailwind's emerald-500
+                showConfirmButton: true,
+                confirmButtonColor: '#6366F1', // Tailwind's indigo-500
+                confirmButtonText: 'Great!',
+                customClass: {
+                    popup: 'rounded-2xl backdrop-blur-md shadow-lg',
+                    title: 'text-xl font-semibold',
+                    confirmButton: 'px-6 py-2 rounded-full text-white',
+                }
+                });
         setForm({ user_name: '', user_email: '', message: '' });
         })
         .catch((error) => {
-        console.error('Error sending email:', error);
+       Swal.fire({
+                title: 'Something went wrong!',
+                text: 'Please try again later or contact support.',
+                icon: 'error',
+                confirmButtonText: 'OK',
+                customClass: {
+                    popup: 'rounded-2xl backdrop-blur-md shadow-xl bg-white/70 border border-gray-200',
+                    title: 'text-lg font-semibold text-gray-800',
+                    htmlContainer: 'text-sm text-gray-600',
+                    confirmButton: 'mt-4 bg-red-500 hover:bg-red-600 text-white font-medium py-2 px-6 rounded-full transition-all',
+                    icon: 'swal2-no-background'
+                },
+                background: 'transparent',
+                showClass: {
+                    popup: 'animate-fade-in'
+                },
+                hideClass: {
+                    popup: 'animate-fade-out'
+                }
+                });
       });
-    console.log('Form submitted:', form);
+
     
   };
 
