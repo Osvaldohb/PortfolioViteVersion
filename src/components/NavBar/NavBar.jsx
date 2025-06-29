@@ -2,7 +2,8 @@
 import React from 'react'
 import './NavBar.css'
 
-const NavBar = () => {
+const NavBar = ({navLinks}) => {
+
 
     const handleMenuToggle=()=>{
 
@@ -29,21 +30,12 @@ const NavBar = () => {
             </span>
 
             <ul className='hidden gap-4 text-2xl sm:text-sm md:text-base  font-semibold text-gray-700 xl:flex '>
-                <li className='hover:scale-110 transition-transform duration-500 ease-in-out'>
-                    <a href="#home" className=' rounded-full py-3 px-8 transition-colors duration-500 ease-in-out   hover:bg-gray-200'>Home</a>
-                </li>
-                <li className='hover:scale-110 transition-transform duration-500 ease-in-out'>
-                    <a href="#about" className='rounded-full py-3 px-8 transition-colors duration-500 ease-in-out   hover:bg-gray-200'>About</a>
-                </li>
-                <li className='hover:scale-110 transition-transform duration-500 ease-in-out'>
-                    <a href="#career" className='rounded-full py-3 px-8 transition-colors duration-500 ease-in-out   hover:bg-gray-200'>Career</a>
-                </li>
-                <li className='hover:scale-110 transition-transform duration-500 ease-in-out'>
-                    <a href="#portfolio" className='rounded-full py-3 px-8 transition-colors duration-500 ease-in-out   hover:bg-gray-200'>Portfolio</a>
-                </li>
-                <li className='hover:scale-110 transition-transform duration-500 ease-in-out'>
-                    <a href="#blog" className='rounded-full py-3 px-8 transition-colors duration-500 ease-in-out   hover:bg-gray-200 scale'>Blog</a>
-                </li>
+
+                {navLinks.map((link, index) => (
+                    <li key={index} className='hover:scale-110 transition-transform duration-500 ease-in-out'>
+                        <a href={link.href} className='rounded-full py-3 px-8 transition-colors duration-500 ease-in-out   hover:bg-gray-200'>{link.name}</a>
+                    </li>
+                ))}
                 <li className='hover:scale-110 transition-transform duration-500 ease-in-out'>
                     <a href="#contact" className='transform bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-white rounded-full py-3 px-8 transition-all duration-500 ease-in-out   hover:scale-110'>Contact</a>
                 </li>
