@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, {  useState } from 'react';
 import emailjs from '@emailjs/browser';
 import Swal from 'sweetalert2';
 
@@ -27,7 +27,7 @@ const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
     emailjs.send(serviceID, templateID, form, {
       publicKey: publicKey,
     })
-      .then((response) => {
+      .then(() => {
         Swal.fire({
                 title: 'Email sent!',
                 text: 'Thanks for reaching out. I’ll get back to you soon.',
@@ -47,7 +47,7 @@ const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
         setForm({ user_name: '', user_email: '', message: '' });
         })
-        .catch((error) => {
+        .catch(() => {
 
             Swal.fire({
                 title: 'Something went wrong!',
