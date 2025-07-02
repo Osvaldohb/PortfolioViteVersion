@@ -1,6 +1,7 @@
 
 import React from 'react'
 import './NavBar.css'
+import LogoMain from '../../assets/logoO.png'
 
 const NavBar = ({navLinks}) => {
 
@@ -25,9 +26,9 @@ const NavBar = ({navLinks}) => {
   return (
     <>
         <nav className='rounded-b-2xl  w-full py-6 px-6 md:px-16 fixed flex justify-between items-center glassNav z-30'>
-            <span>
-                <h1 className='text-2xl font-bold'>OsvaldoSantillan</h1>
-            </span>
+            <a href="/" className='hover:scale-110 transition-transform duration-500 ease-in-out'>
+                <img src={LogoMain} alt="Logo" className='w-40 h-auto' />
+            </a>
 
             <ul className='hidden gap-4 text-2xl sm:text-sm md:text-base  font-semibold text-gray-700 xl:flex '>
 
